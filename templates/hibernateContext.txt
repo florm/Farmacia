@@ -1,0 +1,6 @@
+el archivo hibernateContext.xml.template hay que cambiarlo de lugar y ponerlo en 
+proyecto-limpio-spring/src/main/resources
+Una vez ahi sacar la extencion .template
+La idea es que como este archivo tiene informacion personal de la bdd, para cada uno va a ser distinto,
+entonces lo vamos a poner en el .gitignore para no pushearlo cada vez que pushemos algo al repo.
+Por primera vez cuando se copien el repo van a hacer esto.
