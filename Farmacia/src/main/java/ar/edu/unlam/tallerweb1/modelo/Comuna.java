@@ -1,9 +1,16 @@
 package ar.edu.unlam.tallerweb1.modelo;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+
+
+
 
 @Entity
 public class Comuna {
@@ -13,6 +20,9 @@ public class Comuna {
 	private Long id;
 	
 	private String nombre;
+	
+	@OneToMany
+	private List<Barrio> barrios;
 
 	public Long getId() {
 		return id;
@@ -29,6 +39,18 @@ public class Comuna {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+
+	public List<Barrio> getBarrios() {
+		return barrios;
+	}
+
+	public void setBarrios(List<Barrio> barrios) {
+		this.barrios = barrios;
+	}
+
+	public void addBarrio(Barrio barrio){
+		this.barrios.add(barrio);
+	}
 	
-	
+
 }
