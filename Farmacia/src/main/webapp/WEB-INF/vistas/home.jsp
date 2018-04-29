@@ -8,7 +8,12 @@
 	</head>
 	<body>
 		<div class = "container">
-			<h1>Bienvenidos a Taller Web 1</h1>
+			<h1 class= "text-center">Trabajo Practico I</h1>
+			<div class= "col-12 text-center">
+				<h3>Integrantes</h3>
+				<h4>Alejandra Casuscelli</h4>
+				<h4>Florencia Martin</h4>
+			</div>
 		</div>
 		<!-- Placed at the end of the document so the pages load faster -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" ></script>
