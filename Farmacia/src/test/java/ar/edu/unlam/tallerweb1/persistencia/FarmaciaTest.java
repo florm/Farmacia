@@ -103,11 +103,12 @@ public class FarmaciaTest extends SpringTest{
   	  	List<Farmacia> listaTotales = session1.createCriteria(Farmacia.class).list();
   	  	List<Farmacia> listaCalle =
     			session1.createCriteria(Farmacia.class)
-    			.add(Restrictions.eq("direccion", direccion1))
+    			.createAlias("direccion", "buscaCalle")
+    			.add(Restrictions.eq("buscaCalle.calle", "Corrientes"))
     			.list();
   	  	
   	  	assertEquals(4, listaTotales.size());
-    	assertEquals(3, listaCalle.size());
+    	assertEquals(1, listaCalle.size());
     }
     
     @Test
