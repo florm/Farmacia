@@ -20,7 +20,7 @@ public class ControladorOperacion {
 			@PathVariable String operando2) {
 		
 	ModelMap modelo = new ModelMap();
-	Double result = 0.0;
+	double result = 0.0;
 	Double op1 = Double.parseDouble(operando1);
 	Double op2 = Double.parseDouble(operando2);
 	String formatResultado = "";
@@ -28,15 +28,18 @@ public class ControladorOperacion {
 	switch (operacion.toLowerCase()) {
 	case "sumar":
 		result = op1+op2;
-		formatResultado = result.toString();
+		int suma = (int) result; 
+		formatResultado = suma == result ? String.valueOf(suma) : String.valueOf(result);
 		break;
 	case "restar":
 		result = op1-op2;
-		formatResultado = result.toString();
+		int resta = (int) result; 
+		formatResultado = resta == result ? String.valueOf(resta) : String.valueOf(result);
 		break;
 	case "multiplicar":
-		result = op1*op2;
-		formatResultado = result.toString();
+		result = new BigDecimal(op1*op2).setScale(2, RoundingMode.HALF_UP).doubleValue();
+		int multiplicacion = (int) result; 
+		formatResultado = multiplicacion == result ? String.valueOf(multiplicacion) : String.valueOf(result);
 		break;
 	case "dividir":
 		if(op2 == 0){
@@ -46,7 +49,8 @@ public class ControladorOperacion {
 			
 		}
 		result = new BigDecimal(op1/op2).setScale(2, RoundingMode.HALF_UP).doubleValue();
-		formatResultado = String.format ("%.2f", result);
+		int division = (int) result; 
+		formatResultado = division == result ? String.valueOf(division) : String.valueOf(result);
 		break;
 	default:
 		modelo.put("error","No existe la operacion");
