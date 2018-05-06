@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Resultado</title>
 </head>
 <body>
-	El resultado de ${operacion} el numero ${op1} y el numero ${op2} es ${res}
+	El resultado de ${operacion} el numero ${op1} y el numero ${op2} es ${resultado}
 </body>
 </html>
